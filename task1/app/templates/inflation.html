@@ -19,8 +19,7 @@
         <div class="col s12 m8">
           <table>
             <tbody>
-            {%for index in inflation%}
-              <tr>
+            <tr>
                 <th>Год</th>
                 <th>Январь</th>
                 <th>Ферваль</th>
@@ -36,21 +35,22 @@
                 <th>Декабрь</th>
                 <th>Всего</th>
               </tr>
+            {%for index in inflation%}
             <tr>
-                  <td>{{ index.year }}</td>
-                  <td>{{ index.jan }}</td>
-                  <td>{{ index.feb }}</td>
-                  <td>{{ index.mar }}</td>
-                  <td>{{ index.apr }}</td>
-                  <td>{{ index.may }}</td>
-                  <td>{{ index.jun }}</td>
-                  <td>{{ index.jul }}</td>
-                  <td>{{ index.aug }}</td>
-                  <td>{{ index.sep }}</td>
-                  <td>{{ index.oct }}</td>
-                  <td>{{ index.nov }}</td>
-                  <td>{{ index.des }}</td>
-                  <td> {{ index.sum }}</td>
+                <td>{{ index.year }}</td>
+                <td>{{ index.jan }}</td>
+                <td>{{ index.feb }}</td>
+                <td>{{ index.mar }}</td>
+                <td>{{ index.apr }}</td>
+                <td>{{ index.may }}</td>
+                <td>{{ index.jun }}</td>
+                <td>{{ index.jul }}</td>
+                <td>{{ index.aug }}</td>
+                <td>{{ index.sep }}</td>
+                <td>{{ index.oct }}</td>
+                <td>{{ index.nov }}</td>
+                <td>{{ index.des }}</td>
+                <td> {{ index.sum }}</td>
               </tr>
               {% endfor %}
               </tbody>
