@@ -21,38 +21,29 @@
             <tbody>
             <tr>
                 <th>Год</th>
-                <th>Январь</th>
-                <th>Ферваль</th>
-                <th>Март</th>
-                <th>Апрель</th>
-                <th>Май</th>
-                <th>Июнь</th>
-                <th>Июль</th>
-                <th>Август</th>
-                <th>Сенятбрь</th>
-                <th>Октябрь</th>
-                <th>Ноябрь</th>
-                <th>Декабрь</th>
-                <th>Всего</th>
+                <td></td>
+                    <th>Январь</th>
+                    <th>Ферваль</th>
+                    <th>Март</th>
+                    <th>Апрель</th>
+                    <th>Май</th>
+                    <th>Июнь</th>
+                    <th>Июль</th>
+                    <th>Август</th>
+                    <th>Сенятбрь</th>
+                    <th>Октябрь</th>
+                    <th>Ноябрь</th>
+                    <th>Декабрь</th>
+                    <th>Всего</th>
               </tr>
             {%for index in inflation%}
             <tr>
                 <td>{{ index.year }}</td>
-                <td>{{ index.jan }}</td>
-                <td>{{ index.feb }}</td>
-                <td>{{ index.mar }}</td>
-                <td>{{ index.apr }}</td>
-                <td>{{ index.may }}</td>
-                <td>{{ index.jun }}</td>
-                <td>{{ index.jul }}</td>
-                <td>{{ index.aug }}</td>
-                <td>{{ index.sep }}</td>
-                <td>{{ index.oct }}</td>
-                <td>{{ index.nov }}</td>
-                <td>{{ index.des }}</td>
-                <td> {{ index.sum }}</td>
-              </tr>
-              {% endfor %}
+                <td>{%for percents in index.percents%}</td>
+                <td>{{percents}}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
               </tbody>
           </table>
         </div>

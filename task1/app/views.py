@@ -9,9 +9,9 @@ def inflation_view(request):
         reader = csv.DictReader(csv_file, delimiter=';')
         for row in reader:
             list_of_percents.append(
-                {'year': row['Год'], 'jan': row['Янв'], 'feb': row['Фев'], 'mar': row['Мар'], 'apr': row['Апр'],
-                 'may': row['Май'], 'jun': row['Июн'], 'jul': row['Июл'], 'aug': row['Авг'], 'sep': row['Сен'],
-                 'oct': row['Окт'], 'nov': row['Ноя'], 'des': row['Дек'], 'sum': row['Суммарная']
+                {'year': row['Год'], 'percents': [row['Янв'], row['Фев'], row['Мар'], row['Апр'],
+                                                  row['Май'], row['Июн'], row['Июл'], row['Авг'], row['Сен'],
+                                                  row['Окт'], row['Ноя'], row['Дек'], row['Суммарная']]
                  }
             )
     context = {'inflation': list_of_percents,
