@@ -40,15 +40,15 @@
                 <td>{{ index.year }}</td>
                 {%for percents in index.percents%}
                     {% if percents < 0 %}
-                        <td style="color: green"> {{ percents }}</td>
+                        <td class="green"> {{ percents }}</td>
                     {% elif percents > 1 and percents < 2%}
-                        <td style="color: #EF7B7B">{{ percents }}</td>
+                        <td class="#FC4343">{{ percents }}</td>
                     {% elif percents > 2 and percents < 5 %}
-                        <td style="color: #CF2A2A">{{ percents }}</td>
+                        <td class="#9D1919">{{ percents }}</td>
                     {% elif percents > 5%}
-                        <td style="color: red">{{ percents }}</td>
+                        <td class="red">{{ percents }}</td>
                     {% else %}
-                        <td style="color: black"> {{ percents }}</td>
+                        <td class="white"> {{ percents }}</td>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
