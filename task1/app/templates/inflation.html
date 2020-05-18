@@ -47,6 +47,10 @@
                         <td style="color: #F2B1B1">{{ percents }}</td>
                     {% elif percents > 5%}
                         <td style="color: #ED5252">{{ percents }}</td>
+                    {% elif percents == ""%}
+                        <td>-</td>
+                    {% else %}
+                        <td style="color: black"> {{ percents }}</td>
                     {% endif %}
                 {% endfor %}
             {% endfor %}

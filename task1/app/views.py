@@ -11,8 +11,9 @@ def inflation_view(request):
             list_of_percents.append(
                 {'year': int(row['Год']),
                  'percents': [float(row['Янв']), float(row['Фев']), float(row['Мар']), float(row['Апр']),
-                              row['Май'], row['Июн'], row['Июл'], row['Авг'], row['Сен'],
-                              row['Окт'], row['Ноя'], row['Дек'], row['Суммарная']]
+                              float(row['Май']), float(row['Июн']), float(row['Июл']), float(row['Авг']),
+                              float(row['Сен']), float(row['Окт']), float(row['Ноя']), float(row['Дек']),
+                              float(row['Суммарная'])]
                  }
             )
     context = {'inflation': list_of_percents,
