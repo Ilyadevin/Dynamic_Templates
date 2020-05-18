@@ -40,7 +40,12 @@
             <tr>
                 <td>{{ index.year }}</td>
                 <td>{%for percents in index.percents%}</td>
-                <td>{{percents}}</td>
+                    <td>{{percents}}</td>
+                    {% if percents < 0 %} <td class="#00FF00"> {{ percents }}</td>
+                    {% else %}{% if percents > 1%} <td class="#F8CCCC">{{ percents }}</td>
+                    {% else %}{% if percents > 2%} <td class="#F2B1B1">{{ percents }}</td>
+                    {% else %}{% if percents > 5%} <td class="#ED5252">{{ percents }}</td>
+                {% endif %}{% endif %}{% endif %}{% endif %}
                 {% endfor %}
                 </tr>
             {% endfor %}
