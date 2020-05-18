@@ -21,33 +21,34 @@
             <tbody>
             <tr>
                 <th>Год</th>
-                <td></td>
-                    <th>Январь</th>
-                    <th>Ферваль</th>
-                    <th>Март</th>
-                    <th>Апрель</th>
-                    <th>Май</th>
-                    <th>Июнь</th>
-                    <th>Июль</th>
-                    <th>Август</th>
-                    <th>Сенятбрь</th>
-                    <th>Октябрь</th>
-                    <th>Ноябрь</th>
-                    <th>Декабрь</th>
-                    <th>Всего</th>
+                <th>Январь</th>
+                <th>Ферваль</th>
+                <th>Март</th>
+                <th>Апрель</th>
+                <th>Май</th>
+                <th>Июнь</th>
+                <th>Июль</th>
+                <th>Август</th>
+                <th>Сенятбрь</th>
+                <th>Октябрь</th>
+                <th>Ноябрь</th>
+                <th>Декабрь</th>
+                <th>Всего</th>
               </tr>
             {%for index in inflation%}
             <tr>
                 <td>{{ index.year }}</td>
-                <td>{%for percents in index.percents%}</td>
-                    <td>{{percents}}</td>
-                    {% if percents < 0 %} <td class="#00FF00"> {{ percents }}</td>
-                    {% else %}{% if percents > 1%} <td class="#F8CCCC">{{ percents }}</td>
-                    {% else %}{% if percents > 2%} <td class="#F2B1B1">{{ percents }}</td>
-                    {% else %}{% if percents > 5%} <td class="#ED5252">{{ percents }}</td>
-                {% endif %}{% endif %}{% endif %}{% endif %}
+                {%for percents in index.percents%}
+                    {% if percents < 0 %}
+                        <td style="color: #00FF00"> {{ percents }}</td>
+                    {% elif percents > 1%}
+                        <td style="color: #F8CCCC">{{ percents }}</td>
+                    {% elif percents > 2%}
+                        <td style="color: #F2B1B1">{{ percents }}</td>
+                    {% elif percents > 5%}
+                        <td style="color: #ED5252">{{ percents }}</td>
+                    {% endif %}
                 {% endfor %}
-                </tr>
             {% endfor %}
               </tbody>
           </table>
